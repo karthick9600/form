@@ -3,7 +3,7 @@
 <head>
   <title> Register</title>
 </head>
-<body  style="background-image: url(P.jpg);">
+<body  style="background-image: url(l.jpg);background-repeat:no-repeat; background-size: 100% ">
     <h1>Register Here</h1>
     
 </body>
@@ -16,11 +16,8 @@
     Mobile<input type="number"name="Mobile"><br>
     <br>
     Are you Employed? <input type="radio" name="emp" value="yes">
-    <label for="yes">Yes</label> 
-<input type="radio" name="emp" value="No">
-<label for="No">No</label><br>
-
-
+    <label for="yes">Yes</label> <br>
+    
 Skills<br>
 <input type="checkbox"name="Java" value="Java">
 <label for="Java">Java</label>
@@ -34,10 +31,27 @@ Skills<br>
 <label for="App Development"> App Devopment</label>
 <input type="checkbox"name="Testing"value="Testing">
 <label for ="Testing">Testing</label><br>
-Is everyThing is true   <input type="checkbox"name="True" value="Yes"><label for ="true">Yes</label><br>
+Is everyThing is true   <input type="radio"name="True" value="Yes"><label for ="true">Yes</label>
+<input type="radio" name="emp" value="No"><label for="No">No</label><br>
+<tr><td>salry Expectation</td>
+    <td><input type="range" min="15000" max="30000" name ="salary"></td>
+</tr> 
+<td> 
+    <label for="city">choose city</label>
+</td>
+<td>,<select name="city">
+    <option value="bangalore">Bangalore</option>
+     <option value="cheenai">Chennai</option>
+      <option value="mumbai">Mumbai</option>
 
-Submit<input type="button" name="Submit" value="Register">
-<label for="button"> </label>
+</select> </td>
+</tr>
+<tr>
+<td>About you</td>
+<td><textarea Name="about me"cols="40" rows="5">
+    </textarea>
 
-</form>
-</html>
+</td>
+
+</tr>
+<tr><td> Submit<input type="submit"value="Register"> </td></tr>
