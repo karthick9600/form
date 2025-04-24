@@ -1,63 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title> Register</title>
-</head>
-<body  style="background-color: rgba(137, 43, 226, 0.404);">
-    <h1>Register Here</h1>
-    
-</body>
-<table>
-<form >
-    Name   <input type="text" name="username"><br> 
-    <br>
-    Email  <input type="text"name="email"><br>
-    <br>
-    Mobile<input type="number"name="Mobile"><br>
-    <br>
-    Are you Employed? <input type="radio" name="emp" value="yes">
-    <label for="yes">Yes</label> 
-<input type="radio" name="emp" value="No">
-<label for="No">No</label><br>
-<tr>
-    <label for="weekstart">Choose starting  week</label></td>
- <td> <input type="week" name="weekstart"></td>
-</tr> <br>
-<tr>
-    <label for="weekend">Choose  ending  week</label></td>
-     <td> <input type="week" name="weekend"></td><br>
-
-</tr><br>
-<tr>
-  <td>  <label for="month">Choose the month</label></td>
-  <td><input type="month" name="month"></td>
-</tr><br>
-
-<tr>
-    <td col span="1">
-        <label for="srch">search here</label>
-        <input type="search" name="srch">
-    </td>
-</tr>
-<tr><td>salry Expectation</td>
-    <td><input type="range" min="15000" max="30000" name ="salary"></td>
-</tr> 
-<td> 
-    <label for="city">choose city</label>
-</td>
-<td>,<select name="city">
-    <option value="bangalore">Bangalore</option>
-     <option value="cheenai">Chennai</option>
-      <option value="mumbai">Mumbai</option>
-
-</select> </td>
-</tr>
-<tr>
-<td>About you</td>
-<td><textarea Name="about me"cols="40" rows="5">
-    </textarea>
-
-</td>
-
-</tr>
-<tr><td> <input type="submit"value="fill data"></td></tr>
+  <head>
+    <title>Form</title>
+  </head>
+  <body>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" name="name" /><br /><br />
+      <label for="sex">Sex:</label>
+      <input type="radio" name="sex" id="male" value="male" />
+      <label for="male">Male</label>
+      <input type="radio" name="sex" id="female" value="female" />
+      <label for="female">Female</label> <br /><br />
+      <label for="country">Country: </label>
+      <select name="country" id="country">
+        <option>Select an option</option>
+        <option value="nepal">Nepal</option>
+        <option value="usa">USA</option>
+        <option value="australia">Australia</option></select
+      ><br /><br />
+      <label for="message">Message:</label><br />
+      <textarea name="message" id="message" cols="30" rows="4"></textarea
+      ><br /><br />
+      <input type="checkbox" name="newsletter" id="newsletter" />
+      <label for="newsletter">Subscribe?</label><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
