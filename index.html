@@ -1,50 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title> Registration form</title>
+    <meta charset="UTF-8" />
+    <title>Advanced Registration Form</title>
   </head>
   <body>
-    <body style="background-color:rgba(137, 43, 226, 0.103) ;"></body>
-  
-    <fieldset>
-      <legend>Registration </legend>
-      <form >
-        <label>Name</label>
-        <input type="text"><br>
-        <hr>
-        <label >
-          Password
-        </label>
-        <input type="password">
-        <label for="">Select course</label>
-        <select multiple>
-          <option value="C">C-programmig</option>
-           <option value="Java">Java</option>
-            <option value="Python">Python</option><br>
-            <input type="date"><br>
-            <textarea  cols="42" rows="22"></textarea>
-            <input type="radio" name="gen">Male</input>
-               <input type="radio" name="gen">Female</input><br>
-               <input type="checkbox"> Agree</input>
-               <br>
-               <input type="File" Multiple>
+    <h2>Registration Form</h2>
 
-               <input type="submit">
-               <button>Save</button>
-               <input type="color">
-               <input type="range">
+    <form action="/submit" method="post">
+      <!-- Full Name -->
+      <label for="fullname">Full Name:</label><br />
+      <input type="text" id="fullname" name="fullname" required /><br /><br />
 
+      <!-- Email -->
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br /><br />
 
+      <!-- Phone Number -->
+      <label for="phone">Phone Number:</label><br />
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        pattern="[0-9]{10}"
+        placeholder="1234567890"
+        required
+      /><br /><br />
 
+      <!-- Password -->
+      <label for="password">Password:</label><br />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        minlength="6"
+        required
+      /><br /><br />
 
-        
-        </select>
+      <!-- Confirm Password -->
+      <label for="confirm_password">Confirm Password:</label><br />
+      <input
+        type="password"
+        id="confirm_password"
+        name="confirm_password"
+        minlength="6"
+        required
+      /><br /><br />
 
+      <!-- Gender -->
+      <label>Gender:</label><br />
+      <input type="radio" id="male" name="gender" value="Male" required />
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="Female" />
+      <label for="female">Female</label>
+      <input type="radio" id="other" name="gender" value="Other" />
+      <label for="other">Other</label><br /><br />
 
-      
-      </form>
+      <!-- Date of Birth -->
+      <label for="dob">Date of Birth:</label><br />
+      <input type="date" id="dob" name="dob" required /><br /><br />
 
-    </fieldset>
-    
+      <!-- Country -->
+      <label for="country">Country:</label><br />
+      <select id="country" name="country" required>
+        <option value="">--Select Country--</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        <option value="Australia">Australia</option>
+        <option value="Canada">Canada</option></select
+      ><br /><br />
+
+      <!-- Terms & Conditions -->
+      <input type="checkbox" id="terms" name="terms" required />
+      <label for="terms">I accept the terms and conditions</label><br /><br />
+
+      <!-- Submit -->
+      <input type="submit" value="Register" />
+    </form>
   </body>
 </html>
