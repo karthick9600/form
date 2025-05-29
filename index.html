@@ -1,82 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Advanced Registration Form</title>
-  </head>
-  <body>
-    <h2>Registration Form</h2>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advanced Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    <form action="/submit" method="post">
-      <!-- Full Name -->
-      <label for="fullname">Full Name:</label><br />
-      <input type="text" id="fullname" name="fullname" required /><br /><br />
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-      <!-- Email -->
-      <label for="email">Email:</label><br />
-      <input type="email" id="email" name="email" required /><br /><br />
+    .form-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+    }
 
-      <!-- Phone Number -->
-      <label for="phone">Phone Number:</label><br />
-      <input
-        type="tel"
-        id="phone"
-        name="phone"
-        pattern="[0-9]{10}"
-        placeholder="1234567890"
-        required
-      /><br /><br />
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
 
-      <!-- Password -->
-      <label for="password">Password:</label><br />
-      <input
-        type="password"
-        id="password"
-        name="password"
-        minlength="6"
-        required
-      /><br /><br />
+    .form-group {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
 
-      <!-- Confirm Password -->
-      <label for="confirm_password">Confirm Password:</label><br />
-      <input
-        type="password"
-        id="confirm_password"
-        name="confirm_password"
-        minlength="6"
-        required
-      /><br /><br />
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.8rem 0.8rem 0.8rem 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: transparent;
+      outline: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
 
-      <!-- Gender -->
-      <label>Gender:</label><br />
-      <input type="radio" id="male" name="gender" value="Male" required />
-      <label for="male">Male</label>
-      <input type="radio" id="female" name="gender" value="Female" />
-      <label for="female">Female</label>
-      <input type="radio" id="other" name="gender" value="Other" />
-      <label for="other">Other</label><br /><br />
+    .form-group label {
+      position: absolute;
+      top: 50%;
+      left: 0.5rem;
+      transform: translateY(-50%);
+      background: white;
+      padding: 0 0.3rem;
+      color: #888;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
 
-      <!-- Date of Birth -->
-      <label for="dob">Date of Birth:</label><br />
-      <input type="date" id="dob" name="dob" required /><br /><br />
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label,
+    .form-group textarea:focus + label,
+    .form-group textarea:not(:placeholder-shown) + label,
+    .form-group select:focus + label,
+    .form-group select:valid + label {
+      top: -0.6rem;
+      left: 0.5rem;
+      font-size: 0.8rem;
+      color: #007BFF;
+    }
 
-      <!-- Country -->
-      <label for="country">Country:</label><br />
-      <select id="country" name="country" required>
-        <option value="">--Select Country--</option>
-        <option value="India">India</option>
-        <option value="USA">USA</option>
-        <option value="UK">UK</option>
-        <option value="Australia">Australia</option>
-        <option value="Canada">Canada</option></select
-      ><br /><br />
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
 
-      <!-- Terms & Conditions -->
-      <input type="checkbox" id="terms" name="terms" required />
-      <label for="terms">I accept the terms and conditions</label><br /><br />
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      background: #007BFF;
+      color: white;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
 
-      <!-- Submit -->
-      <input type="submit" value="Register" />
-    </form>
-  </body>
+    button:hover {
+      background: #0056b3;
+    }
+
+    @media (max-width: 480px) {
+      .form-container {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Contact Us</h2>
+  <form>
+    <div class="form-group">
+      <input type="text" id="name" name="name" placeholder=" " required>
+      <label for="name">Full Name</label>
+    </div>
+    <div class="form-group">
+      <input type="email" id="email" name="email" placeholder=" " required>
+      <label for="email">Email Address</label>
+    </div>
+    <div class="form-group">
+      <select id="topic" name="topic" required>
+        <option value="" disabled selected hidden></option>
+        <option value="support">Support</option>
+        <option value="sales">Sales</option>
+        <option value="feedback">Feedback</option>
+      </select>
+      <label for="topic">Topic</label>
+    </div>
+    <div class="form-group">
+      <textarea id="message" name="message" placeholder=" " required></textarea>
+      <label for="message">Your Message</label>
+    </div>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+</body>
 </html>
